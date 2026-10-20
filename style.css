@@ -1,30 +1,238 @@
 
+
+/* 1. Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Smooth scrolling for navigation links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 3. Main website styling */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f4f8;
-    padding: 60px 20px;
+    background: #100d24;
+    color: #ffffff;
+    min-height: 100vh;
 }
 
-h1 {
-    color: #1565c0;
+/* 4. Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    gap: 24px;
 }
 
-p {
-    color: #333333;
-    font-size: 18px;
-}
-
-button {
-    background-color: #1565c0;
+/* 5. Portfolio logo */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
     color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: #0d47a1;
+.logo span {
+    color: #ff5cce;
+}
+
+/* 6. Navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #d7d2e8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5cce;
+}
+
+/* 7. Main introduction section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 8%;
+    background:
+        radial-gradient(ellipse at 15% 20%, #5b21b655, transparent 40%),
+        radial-gradient(ellipse at 85% 70%, #db277755, transparent 40%);
+}
+
+/* 8. Small introduction text */
+.intro {
+    color: #55e6ff;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* 9. Main heading */
+.hero h1 {
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1.15;
+    max-width: 900px;
+    margin-bottom: 24px;
+}
+
+/* 10. Colorful gradient text */
+.hero h1 span {
+    background: linear-gradient(90deg, #ff5cce, #ffb86b, #55e6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 11. Description paragraph */
+.description {
+    color: #c5bfdc;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+/* 12. Call-to-action button */
+.hero-button {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #9b5cff, #ff5cce);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px #ff5cce55;
+}
+
+/* 13. Mobile-friendly navigation */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 24px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 50px 6%;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
+
+/* Portfolio content sections */
+.content-section {
+    padding: 80px 8%;
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+.section-label {
+    color: #55e6ff;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.content-section h2 {
+    font-size: clamp(30px, 5vw, 46px);
+    margin-bottom: 24px;
+}
+
+.content-section h2 span {
+    color: #ff5cce;
+}
+
+.content-section > p:not(.section-label) {
+    color: #c5bfdc;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 24px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.project-card {
+    background: #211a3d;
+    border: 1px solid #51416f;
+    border-radius: 18px;
+    padding: 28px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #ff5cce;
+}
+
+.project-card h3 {
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.project-card p {
+    color: #c5bfdc;
+    line-height: 1.7;
+}
+
+.contact-section {
+    background: #19132f;
+}
+
+/* Extra polish for mobile screens */
+@media (max-width: 600px) {
+    .content-section {
+        padding: 60px 6%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero-button {
+        padding: 13px 22px;
+    }
 }

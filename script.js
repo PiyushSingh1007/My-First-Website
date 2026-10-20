@@ -1,7 +1,7 @@
 
-const button = document.getElementById("messageButton");
-const message = document.getElementById("message");
+const contactButton = document.querySelector(".contact-section .hero-button");
 
-button.addEventListener("click", function () {
-    message.textContent = "Congratulations! JavaScript is working!";
+contactButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    alert("Thanks for visiting my portfolio! 🚀");
 });
